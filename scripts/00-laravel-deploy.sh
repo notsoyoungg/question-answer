@@ -16,4 +16,4 @@ echo "Running migrations..."
 php artisan migrate --force
 
 echo "Seeding the database..."
-php artisan db:seed
+php artisan db:seed --force
