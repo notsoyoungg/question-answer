@@ -13,6 +13,6 @@ class QuestionAnswerSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         QuestionAnswer::truncate();
         Schema::enableForeignKeyConstraints();
-        QuestionAnswer::factory()->times(15)->create();
+//        QuestionAnswer::factory()->times(15)->create();
     }
 }
