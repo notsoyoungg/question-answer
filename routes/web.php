@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ContentController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SettingController;
+use App\Models\QuestionAnswer;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +19,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index', [
+        'content' => QuestionAnswer::paginate(10),
+        'padding' => Setting::first()
+    ]);
 });
+
+Auth::routes();
+
+Route::get('/admin', [HomeController::class, 'index'])->name('admin');
+Route::resource('content', ContentController::class);
+Route::post('/settings', [SettingController::class, 'update'])->name('settings-update');
+
+
