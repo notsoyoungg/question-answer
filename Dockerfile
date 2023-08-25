@@ -1,7 +1,4 @@
-FROM ubuntu:latest
-LABEL authors="Sergei"
-
-#ENTRYPOINT ["top", "-b"]
+FROM richarvey/nginx-php-fpm:1.7.2
 
 COPY . .
 
