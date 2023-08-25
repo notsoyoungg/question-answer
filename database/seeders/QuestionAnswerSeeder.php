@@ -10,11 +10,9 @@ class QuestionAnswerSeeder extends Seeder
 {
     public function run(): void
     {
-        if (app()->isLocal()){
-            Schema::disableForeignKeyConstraints();
-            QuestionAnswer::truncate();
-            Schema::enableForeignKeyConstraints();
-            QuestionAnswer::factory()->times(15)->create();
-        }
+        Schema::disableForeignKeyConstraints();
+        QuestionAnswer::truncate();
+        Schema::enableForeignKeyConstraints();
+        QuestionAnswer::factory()->times(15)->create();
     }
 }

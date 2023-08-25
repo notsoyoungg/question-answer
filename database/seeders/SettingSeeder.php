@@ -11,14 +11,12 @@ class SettingSeeder extends Seeder
 {
     public function run(): void
     {
-        if (app()->isLocal()){
-            Schema::disableForeignKeyConstraints();
-            Setting::truncate();
-            Schema::enableForeignKeyConstraints();
-            Setting::create([
-                'padding_top' => '0px',
-                'padding_bottom' => '0px'
-            ]);
-        }
+        Schema::disableForeignKeyConstraints();
+        Setting::truncate();
+        Schema::enableForeignKeyConstraints();
+        Setting::create([
+            'padding_top' => '0px',
+            'padding_bottom' => '0px'
+        ]);
     }
 }
