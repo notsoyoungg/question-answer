@@ -14,12 +14,11 @@ class ContentController extends Controller
 
     public function create()
     {
-        return view('creation-form');
+        return view('admin.creation-form');
     }
 
     public function store(Request $request)
     {
-//        dd($request);
         QuestionAnswer::create([
             'question' => $request->question,
             'answer' => $request->answer
@@ -29,7 +28,7 @@ class ContentController extends Controller
 
     public function show($id)
     {
-        return view('question-answer', ['content' => QuestionAnswer::whereId($id)->first()]);
+        return view('admin.question-answer', ['content' => QuestionAnswer::whereId($id)->first()]);
     }
 
     public function edit($id)

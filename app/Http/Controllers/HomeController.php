@@ -25,6 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         $content = QuestionAnswer::paginate(5);
-        return view('admin', ['content' => $content]);
+        return view('admin.admin', ['content' => $content]);
     }
 }
